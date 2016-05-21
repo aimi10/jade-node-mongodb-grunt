@@ -1,0 +1,17 @@
+header.am-topbar.am-topbar-fixed-top
+    div.am-container
+        h1.am-topbar-brand
+            a(href="/") 美食汇
+        button.am-topbar-btn.am-topbar-toggle.am-btn.am-btn-sm.am-btn-success.am-show-sm-only(data-am-collapse="{target: '#doc-topbar-collapse'}")
+            span.am-sr-only 导航切换
+            span.am-icon-bars
+        div.am-collapse.am-topbar-collapse#doc-topbar-collapse
+            ul.am-nav.am-nav-pills.am-topbar-nav
+                li(class="#{pageIndexActive}")
+                    a(href="/") 首页
+                li(class="#{pageActiveActive}")
+                    a(href="/admin") 后台
+
+
+
+

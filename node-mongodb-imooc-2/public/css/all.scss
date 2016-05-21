@@ -1,0 +1,109 @@
+@mixin opacity {
+  0% {
+    opacity: 0;
+  }
+  /*
+      40% {
+        opacity: .1;
+      }
+      45% {
+        opacity: .2;
+      }*/
+  50% {
+    opacity: .3;
+  }
+  /* 55% {
+     opacity: .6;
+   }
+   60% {
+     opacity: .8;
+   }*/
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin imgcss {
+  img {
+    opacity: 0;
+    width: 100%;
+  }
+}
+
+//loading背景图
+@mixin loadingimg {
+  background-color: #fff;
+  background-image: url(/upload/loading5.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/*---动画效果---start---*/
+.animation-opacity {
+  opacity: 0; //初始状态设定
+  -webkit-animation: animations2 2s ease-in-out 0s forwards;
+  -moz-animation: animations2 2s ease-in-out 0s forwards;
+  animation: animations2 2s ease-in-out 0s forwards;
+}
+
+@-webkit-keyframes animations2 {
+  @include opacity;
+}
+
+@-moz-keyframes animations2 {
+  @include opacity;
+}
+
+@keyframes animations2 {
+  @include opacity;
+}
+
+/*---动画效果---end---*/
+
+/*---瀑布流区域--start--*/
+
+$gutter: 10px;
+$minHeight: 200px;
+//$gridItemWidth: 232-$gutter*2;
+.aimi10-img-container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.aimi10-img-container {
+  .aimi10-grid-sizer {
+    //width: $gridItemWidth;
+  }
+  .aimi10-grid-item {
+    float: left;
+
+    margin-bottom: $gutter;
+    min-height: $minHeight;
+    .am-thumbnail {
+      min-height: $minHeight;
+      @include loadingimg;
+      @include imgcss;
+    }
+
+  }
+}
+
+/*---瀑布流区域--end--*/
+
+/*---幻灯片--start---*/
+#topAd {
+  li {
+    @include loadingimg;
+    @include imgcss;
+  }
+}
+
+#centerAd {
+  .am-thumbnail {
+    @include loadingimg;
+    @include imgcss;
+  }
+}
+
+/*---幻灯片--end---*/

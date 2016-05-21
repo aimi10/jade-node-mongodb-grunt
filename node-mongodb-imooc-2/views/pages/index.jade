@@ -1,0 +1,32 @@
+extends ../layout
+block title
+    title #{title}
+block content
+    style.
+        .am-slider-default .am-control-nav{
+            bottom:10px;
+        }
+
+    div.am-g
+        div.am-slider.am-slider-default(data-am-flexslider)
+            ul.am-slides#topAd
+                -for(var i=0;i<slides.length;i++)
+                    li
+                        img(src="#{slides[i].img}")
+    div.am-g
+        div.am-container#centerAd
+            -for(var i=0;i<thumbnail.length;i++)
+                div.am-u-lg-3
+                    div.am-thumbnail
+                        img(src="#{thumbnail[i].img}",alt="#{thumbnail[i].title}",style="width:100%")
+                        div.am-thumbnail-caption
+                            div
+                                small
+                                    strong #{thumbnail[i].title}
+                            small #{thumbnail[i].summary}
+    include ../includes/index-content.jade
+
+
+
+
+
