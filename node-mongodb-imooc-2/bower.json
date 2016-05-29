@@ -15,6 +15,7 @@
   "dependencies": {
     "amazeui": "^2.6.2",
     "masonry": "^4.1.0",
-    "imagesloaded": "^4.1.0"
+    "imagesloaded": "^4.1.0",
+    "iscroll": "^5.2.0"
   }
 }

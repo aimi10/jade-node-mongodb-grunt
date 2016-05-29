@@ -30,17 +30,11 @@ app.get('/', function (request, response1) {
                 pageIndexActive: "am-active",
                 slides: [
                     {
-                        img: "http://static.xiaomi.cn/xiaomicms/uploadfile/2015/0616/20150616115235599.jpg?time=" + Date.parse(new Date())
+                        img: "http://static.xiaomi.cn/xiaomicms/uploadfile/2015/0616/20150616115235599.jpg"
                     },
                     {
-                        img: "http://static.xiaomi.cn/xiaomicms/uploadfile/2015/0616/20150616115107485.jpg?time=" + Date.parse(new Date())
+                        img: "http://static.xiaomi.cn/xiaomicms/uploadfile/2015/0616/20150616115107485.jpg"
                     }
-                    /*{
-                     img: "http://static.xiaomi.cn/xiaomicms/uploadfile/2015/0616/20150616115235599.jpg?time="
-                     },
-                     {
-                     img: "http://static.xiaomi.cn/xiaomicms/uploadfile/2015/0616/20150616115107485.jpg?time="
-                     }*/
                 ],
                 thumbnail: [
                     {
@@ -76,25 +70,25 @@ app.get("/indexContentImg/:page", function (request, response) {
     response.send({
         imgdata: [
             {
-                src: "http://www.aimi10.com/will/upload/1.jpg?time=" + Date.parse(new Date())
+                src: "http://www.aimi10.com/will/upload/1.jpg?time="
             },
             {
-                src: "http://www.aimi10.com/will/upload/2.jpg?time=" + Date.parse(new Date())
+                src: "http://www.aimi10.com/will/upload/2.jpg?time="
             },
             {
-                src: "http://www.aimi10.com/will/upload/3.jpg?time=" + Date.parse(new Date())
+                src: "http://www.aimi10.com/will/upload/3.jpg?time="
             },
             {
-                src: "http://www.aimi10.com/will/upload/4.jpg?time=" + Date.parse(new Date())
+                src: "http://www.aimi10.com/will/upload/4.jpg?time="
             },
             {
-                src: "http://www.aimi10.com/will/upload/5.jpg?time=" + Date.parse(new Date())
+                src: "http://www.aimi10.com/will/upload/5.jpg?time="
             },
             {
-                src: "http://www.aimi10.com/will/upload/6.jpg?time=" + Date.parse(new Date())
+                src: "http://www.aimi10.com/will/upload/6.jpg?time="
             },
             {
-                src: "http://www.aimi10.com/will/upload/7.jpg?time=" + Date.parse(new Date())
+                src: "http://www.aimi10.com/will/upload/7.jpg?time="
             }
         ]
     })

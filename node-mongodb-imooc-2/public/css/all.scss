@@ -33,7 +33,7 @@
 //loading背景图
 @mixin loadingimg {
   background-color: #fff;
-  background-image: url(/upload/loading5.gif);
+  background-image: url(/upload/loading6.gif);
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -61,10 +61,53 @@
 /*---动画效果---end---*/
 
 /*---瀑布流区域--start--*/
+html {
+  -ms-touch-action: none;
+}
+
+body {
+  overflow: hidden; /* this is important to prevent the whole page to bounce */
+  position: static; //这里跟amaze ui 冲突,所以改成static,如果不改,wrapper会没有高度
+}
+
+$footerHeight: 48px;
+#wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 50px;
+  bottom: $footerHeight;
+  left: 0;
+
+}
+
+#scroller {
+  position: absolute;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+
+}
 
 $gutter: 10px;
 $minHeight: 200px;
-//$gridItemWidth: 232-$gutter*2;
 .aimi10-img-container:after {
   content: '';
   display: block;
@@ -72,12 +115,8 @@ $minHeight: 200px;
 }
 
 .aimi10-img-container {
-  .aimi10-grid-sizer {
-    //width: $gridItemWidth;
-  }
   .aimi10-grid-item {
     float: left;
-
     margin-bottom: $gutter;
     min-height: $minHeight;
     .am-thumbnail {
@@ -107,3 +146,25 @@ $minHeight: 200px;
 }
 
 /*---幻灯片--end---*/
+
+/*---footer--start---*/
+#footer {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $footerHeight;
+  background: #555;
+  padding: 0;
+  border-top: 1px solid #444;
+  .amz-cp {
+    margin-top: 10px;
+    a {
+      color: #999;
+      font-size: 13px;
+    }
+  }
+}
+
+/*---footer--end---*/
